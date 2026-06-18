@@ -1,0 +1,10 @@
+--index-url https://download.pytorch.org/whl/cu121 --force-reinstall
+torch
+torchvision
+torchaudio
+transformers
+accelerate
+datasets
+scipy
+scikit-learn
+matplotlib
