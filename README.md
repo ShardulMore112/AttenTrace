@@ -25,5 +25,7 @@ for chain-of-thought correctness than traditional output-logit entropy.
 ## Status
 
 Phase 1 ✅ Completed
+
 Phase 2 🚧 Attention Entropy Extraction
+
 Phase 3 ⏳ Predictive Evaluation
