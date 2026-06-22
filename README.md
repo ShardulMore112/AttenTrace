@@ -41,42 +41,22 @@
 Prompt
    │
    ▼
-Qwen2.5 Generation
+Qwen2.5 Generation (Pass 1)
    │
    ▼
-Reasoning Trajectory Extraction
+Reasoning Trajectory BPE Alignment
    │
    ▼
-Attention Tensor Collection
+Full Attention Extraction (Pass 2: use_cache=False)
    │
    ▼
-Dispersion Feature Computation
+Dispersion Feature Computation (AttenTrace)
    │
    ▼
-Cross-Validation Evaluation
-   │
-   ▼
-Hallucination Detection
+Cross-Validation Evaluation & Hallucination Detection
 ```
 
 ---
-
-## Technology Stack
-
-| Component           | Technology               |
-| ------------------- | ------------------------ |
-| LLM                 | Qwen2.5 Instruct         |
-| Deep Learning       | PyTorch                  |
-| Model Interface     | HuggingFace Transformers |
-| Numerical Computing | NumPy                    |
-| Data Processing     | Pandas                   |
-| Evaluation          | Scikit-Learn             |
-| Statistics          | SciPy                    |
-| Visualization       | Matplotlib               |
-| Experiments         | Kaggle Notebooks         |
-
----
-
 ## Repository Structure
 
 <details>
@@ -86,19 +66,22 @@ Hallucination Detection
 AttenTrace/
 │
 ├── extraction_pipeline/
-│   ├── trajectory_extractor.py
-│   ├── alignment.py
-│   └── feature_builder.py
-│
-├── final_grader.py
-├── master_evaluate.py
+│   ├── extract_qwen_1.5B.ipynb    # Generation & entropy alignment
+│   └── extract_qwen_3B.ipynb      # Scaled architecture extraction
 │
 ├── data/
 │   ├── gsm8k/
-│   └── math500/
+│   └── math500/                   # Contains final graded 3B JSON
 │
-├── figures/
+├── figures/                       # Qualitative trajectories & ROC curves
+│
+├── final_grader.py                # Robust balanced-brace LaTeX target extraction
+├── master_evaluate.py             # 50-Fold Repeated Stratified CV Evaluation
+├── generate_3b_plots.py           
+│
+├── .gitignore
 ├── requirements.txt
+├── LICENSE
 └── README.md
 ```
 
