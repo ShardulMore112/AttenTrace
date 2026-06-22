@@ -1,10 +1,11 @@
 --index-url https://download.pytorch.org/whl/cu121 --force-reinstall
 torch
-torchvision
-torchaudio
 transformers
-accelerate
 datasets
+numpy
+pandas
 scipy
 scikit-learn
 matplotlib
+seaborn
+tqdm
